@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_error
-from sklearn.tree import DecisionTreeRegressor, export_text
+from sklearn.tree import DecisionTreeRegressor, export_text, plot_tree
 
 SPLIT_PATH = Path("data/processed/flight_prices_with_splits.csv")
 FIG_DIR = Path("outputs/figures")
@@ -168,6 +168,41 @@ def fig_curves(metric_df: pd.DataFrame) -> None:
     plt.close(fig)
 
 
+# 깊이별 그림 크기와 파일명. 깊이 2 그림은 06 단계에서 이미 생성하므로 제외한다.
+TREE_FIG_SPEC = {
+    4: {"figsize": (30, 11), "fontsize": 8, "name": "09_tree_depth4.png"},
+    6: {"figsize": (58, 15), "fontsize": 5, "name": "10_tree_depth6.png"},
+}
+
+
+def fig_tree(trees: dict, metric_df: pd.DataFrame, depth: int,
+             scheme: str = "split_group") -> Path:
+    """단일 나무를 06 단계와 같은 형식으로 그린다."""
+    tree, X_tr = trees[(scheme, depth)]
+    spec = TREE_FIG_SPEC[depth]
+    row = metric_df[(metric_df["분할방식"] == scheme)
+                    & (metric_df["max_depth"] == depth)].iloc[0]
+
+    fig, ax = plt.subplots(figsize=spec["figsize"])
+    ax.grid(False)
+    plot_tree(tree, feature_names=list(X_tr.columns),
+              filled=True, rounded=True, precision=2, fontsize=spec["fontsize"],
+              impurity=True, proportion=False, ax=ax)
+    ax.set_title(
+        f"의사결정나무 회귀 (max_depth={depth}, min_samples_leaf={MIN_SAMPLES_LEAF}, "
+        f"random_state={RANDOM_STATE}) — {scheme}\n"
+        f"잎 {int(row['잎 개수'])}개 · 사용 변수 {int(row['사용된 변수'])}개 · "
+        f"테스트 MAE {row['test_MAE']:,.0f} / RMSE {row['test_RMSE']:,.0f} / "
+        f"R2 {row['test_R2']:.4f}",
+        fontsize=15, pad=20)
+    fig.tight_layout()
+
+    path = FIG_DIR / spec["name"]
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
 def main() -> None:
     setup_style()
     FIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -226,6 +261,10 @@ def main() -> None:
     (TBL_DIR / "depth_comparison_rules.txt").write_text("\n".join(rules), encoding="utf-8")
 
     fig_curves(metric_df)
+    for depth in TREE_FIG_SPEC:
+        path = fig_tree(trees, metric_df, depth)
+        print(f"저장: {path}  ({path.stat().st_size / 1024:,.0f} KB)")
+
     print(f"\n저장: {TBL_DIR / 'depth_comparison.csv'}")
     print(f"저장: {TBL_DIR / 'depth_feature_importance.csv'}")
     print(f"저장: {TBL_DIR / 'depth_comparison_by_class.csv'}")
