@@ -1,0 +1,6 @@
+﻿,duration,days_left,stops_ord,is_business,price
+duration,1.0,-0.033,0.513,0.164,0.319
+days_left,-0.033,1.0,-0.008,-0.013,-0.267
+stops_ord,0.513,-0.008,1.0,0.006,0.223
+is_business,0.164,-0.013,0.006,1.0,0.802
+price,0.319,-0.267,0.223,0.802,1.0
