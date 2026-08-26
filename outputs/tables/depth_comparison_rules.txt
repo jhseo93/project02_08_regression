@@ -1,0 +1,230 @@
+================================================================================================
+[split_group] max_depth=2
+================================================================================================
+|--- class_Economy <= 0.50
+|   |--- duration <= 4.71
+|   |   |--- value: [27952.74]
+|   |--- duration >  4.71
+|   |   |--- value: [55056.52]
+|--- class_Economy >  0.50
+|   |--- days_left <= 15.50
+|   |   |--- value: [10571.68]
+|   |--- days_left >  15.50
+|   |   |--- value: [5162.21]
+
+================================================================================================
+[split_group] max_depth=4
+================================================================================================
+|--- class_Economy <= 0.50
+|   |--- duration <= 4.71
+|   |   |--- duration <= 2.04
+|   |   |   |--- duration <= 1.79
+|   |   |   |   |--- value: [19017.14]
+|   |   |   |--- duration >  1.79
+|   |   |   |   |--- value: [22687.48]
+|   |   |--- duration >  2.04
+|   |   |   |--- airline_Air_India <= 0.50
+|   |   |   |   |--- value: [31862.41]
+|   |   |   |--- airline_Air_India >  0.50
+|   |   |   |   |--- value: [26383.10]
+|   |--- duration >  4.71
+|   |   |--- airline_Vistara <= 0.50
+|   |   |   |--- destination_city_Delhi <= 0.50
+|   |   |   |   |--- value: [50152.27]
+|   |   |   |--- destination_city_Delhi >  0.50
+|   |   |   |   |--- value: [45767.22]
+|   |   |--- airline_Vistara >  0.50
+|   |   |   |--- days_left <= 5.50
+|   |   |   |   |--- value: [66906.08]
+|   |   |   |--- days_left >  5.50
+|   |   |   |   |--- value: [57562.81]
+|--- class_Economy >  0.50
+|   |--- days_left <= 15.50
+|   |   |--- duration <= 4.21
+|   |   |   |--- duration <= 2.38
+|   |   |   |   |--- value: [5824.49]
+|   |   |   |--- duration >  2.38
+|   |   |   |   |--- value: [7532.70]
+|   |   |--- duration >  4.21
+|   |   |   |--- days_left <= 3.50
+|   |   |   |   |--- value: [14853.00]
+|   |   |   |--- days_left >  3.50
+|   |   |   |   |--- value: [10775.54]
+|   |--- days_left >  15.50
+|   |   |--- duration <= 4.21
+|   |   |   |--- duration <= 2.29
+|   |   |   |   |--- value: [2537.63]
+|   |   |   |--- duration >  2.29
+|   |   |   |   |--- value: [3866.08]
+|   |   |--- duration >  4.21
+|   |   |   |--- airline_AirAsia <= 0.50
+|   |   |   |   |--- value: [5709.02]
+|   |   |   |--- airline_AirAsia >  0.50
+|   |   |   |   |--- value: [3115.54]
+
+================================================================================================
+[split_group] max_depth=6
+================================================================================================
+|--- class_Economy <= 0.50
+|   |--- duration <= 4.71
+|   |   |--- duration <= 2.04
+|   |   |   |--- duration <= 1.79
+|   |   |   |   |--- value: [19017.14]
+|   |   |   |--- duration >  1.79
+|   |   |   |   |--- value: [22687.48]
+|   |   |--- duration >  2.04
+|   |   |   |--- airline_Air_India <= 0.50
+|   |   |   |   |--- duration <= 2.21
+|   |   |   |   |   |--- source_city_Delhi <= 0.50
+|   |   |   |   |   |   |--- value: [29281.90]
+|   |   |   |   |   |--- source_city_Delhi >  0.50
+|   |   |   |   |   |   |--- value: [31328.73]
+|   |   |   |   |--- duration >  2.21
+|   |   |   |   |   |--- days_left <= 13.50
+|   |   |   |   |   |   |--- value: [34274.18]
+|   |   |   |   |   |--- days_left >  13.50
+|   |   |   |   |   |   |--- value: [32290.01]
+|   |   |   |--- airline_Air_India >  0.50
+|   |   |   |   |--- duration <= 2.54
+|   |   |   |   |   |--- days_left <= 21.50
+|   |   |   |   |   |   |--- value: [24193.60]
+|   |   |   |   |   |--- days_left >  21.50
+|   |   |   |   |   |   |--- value: [23600.95]
+|   |   |   |   |--- duration >  2.54
+|   |   |   |   |   |--- days_left <= 26.50
+|   |   |   |   |   |   |--- value: [29690.02]
+|   |   |   |   |   |--- days_left >  26.50
+|   |   |   |   |   |   |--- value: [29255.57]
+|   |--- duration >  4.71
+|   |   |--- airline_Air_India <= 0.50
+|   |   |   |--- days_left <= 5.50
+|   |   |   |   |--- days_left <= 3.50
+|   |   |   |   |   |--- days_left <= 2.50
+|   |   |   |   |   |   |--- value: [71958.14]
+|   |   |   |   |   |--- days_left >  2.50
+|   |   |   |   |   |   |--- value: [71186.45]
+|   |   |   |   |--- days_left >  3.50
+|   |   |   |   |   |--- duration <= 17.29
+|   |   |   |   |   |   |--- value: [65371.36]
+|   |   |   |   |   |--- duration >  17.29
+|   |   |   |   |   |   |--- value: [59985.71]
+|   |   |   |--- days_left >  5.50
+|   |   |   |   |--- source_city_Kolkata <= 0.50
+|   |   |   |   |   |--- destination_city_Kolkata <= 0.50
+|   |   |   |   |   |   |--- value: [55701.77]
+|   |   |   |   |   |--- destination_city_Kolkata >  0.50
+|   |   |   |   |   |   |--- value: [61553.51]
+|   |   |   |   |--- source_city_Kolkata >  0.50
+|   |   |   |   |   |--- duration <= 14.88
+|   |   |   |   |   |   |--- value: [64267.21]
+|   |   |   |   |   |--- duration >  14.88
+|   |   |   |   |   |   |--- value: [59144.45]
+|   |   |--- airline_Air_India >  0.50
+|   |   |   |--- destination_city_Delhi <= 0.50
+|   |   |   |   |--- source_city_Delhi <= 0.50
+|   |   |   |   |   |--- destination_city_Bangalore <= 0.50
+|   |   |   |   |   |   |--- value: [50565.17]
+|   |   |   |   |   |--- destination_city_Bangalore >  0.50
+|   |   |   |   |   |   |--- value: [54685.99]
+|   |   |   |   |--- source_city_Delhi >  0.50
+|   |   |   |   |   |--- arrival_time_Afternoon <= 0.50
+|   |   |   |   |   |   |--- value: [46617.05]
+|   |   |   |   |   |--- arrival_time_Afternoon >  0.50
+|   |   |   |   |   |   |--- value: [41171.82]
+|   |   |   |--- destination_city_Delhi >  0.50
+|   |   |   |   |--- source_city_Kolkata <= 0.50
+|   |   |   |   |   |--- duration <= 17.04
+|   |   |   |   |   |   |--- value: [45427.78]
+|   |   |   |   |   |--- duration >  17.04
+|   |   |   |   |   |   |--- value: [43187.54]
+|   |   |   |   |--- source_city_Kolkata >  0.50
+|   |   |   |   |   |--- value: [49680.33]
+|--- class_Economy >  0.50
+|   |--- days_left <= 15.50
+|   |   |--- duration <= 4.21
+|   |   |   |--- duration <= 2.38
+|   |   |   |   |--- days_left <= 3.50
+|   |   |   |   |   |--- value: [7610.29]
+|   |   |   |   |--- days_left >  3.50
+|   |   |   |   |   |--- duration <= 1.62
+|   |   |   |   |   |   |--- value: [4404.14]
+|   |   |   |   |   |--- duration >  1.62
+|   |   |   |   |   |   |--- value: [5980.64]
+|   |   |   |--- duration >  2.38
+|   |   |   |   |--- days_left <= 4.50
+|   |   |   |   |   |--- value: [9018.02]
+|   |   |   |   |--- days_left >  4.50
+|   |   |   |   |   |--- days_left <= 10.50
+|   |   |   |   |   |   |--- value: [7489.28]
+|   |   |   |   |   |--- days_left >  10.50
+|   |   |   |   |   |   |--- value: [6807.19]
+|   |   |--- duration >  4.21
+|   |   |   |--- days_left <= 3.50
+|   |   |   |   |--- airline_Vistara <= 0.50
+|   |   |   |   |   |--- airline_Air_India <= 0.50
+|   |   |   |   |   |   |--- value: [12945.11]
+|   |   |   |   |   |--- airline_Air_India >  0.50
+|   |   |   |   |   |   |--- value: [15078.10]
+|   |   |   |   |--- airline_Vistara >  0.50
+|   |   |   |   |   |--- departure_time_Evening <= 0.50
+|   |   |   |   |   |   |--- value: [17229.22]
+|   |   |   |   |   |--- departure_time_Evening >  0.50
+|   |   |   |   |   |   |--- value: [14977.75]
+|   |   |   |--- days_left >  3.50
+|   |   |   |   |--- airline_Vistara <= 0.50
+|   |   |   |   |   |--- airline_Air_India <= 0.50
+|   |   |   |   |   |   |--- value: [8276.53]
+|   |   |   |   |   |--- airline_Air_India >  0.50
+|   |   |   |   |   |   |--- value: [12140.62]
+|   |   |   |   |--- airline_Vistara >  0.50
+|   |   |   |   |   |--- stops_one <= 0.50
+|   |   |   |   |   |   |--- value: [16419.50]
+|   |   |   |   |   |--- stops_one >  0.50
+|   |   |   |   |   |   |--- value: [11845.54]
+|   |--- days_left >  15.50
+|   |   |--- duration <= 4.21
+|   |   |   |--- duration <= 2.29
+|   |   |   |   |--- duration <= 1.38
+|   |   |   |   |   |--- source_city_Chennai <= 0.50
+|   |   |   |   |   |   |--- value: [1929.85]
+|   |   |   |   |   |--- source_city_Chennai >  0.50
+|   |   |   |   |   |   |--- value: [1582.94]
+|   |   |   |   |--- duration >  1.38
+|   |   |   |   |   |--- destination_city_Kolkata <= 0.50
+|   |   |   |   |   |   |--- value: [2636.22]
+|   |   |   |   |   |--- destination_city_Kolkata >  0.50
+|   |   |   |   |   |   |--- value: [3634.37]
+|   |   |   |--- duration >  2.29
+|   |   |   |   |--- source_city_Kolkata <= 0.50
+|   |   |   |   |   |--- duration <= 2.46
+|   |   |   |   |   |   |--- value: [3057.04]
+|   |   |   |   |   |--- duration >  2.46
+|   |   |   |   |   |   |--- value: [3859.36]
+|   |   |   |   |--- source_city_Kolkata >  0.50
+|   |   |   |   |   |--- days_left <= 30.50
+|   |   |   |   |   |   |--- value: [4674.43]
+|   |   |   |   |   |--- days_left >  30.50
+|   |   |   |   |   |   |--- value: [4044.77]
+|   |   |--- duration >  4.21
+|   |   |   |--- airline_AirAsia <= 0.50
+|   |   |   |   |--- stops_one <= 0.50
+|   |   |   |   |   |--- airline_Vistara <= 0.50
+|   |   |   |   |   |   |--- value: [7093.07]
+|   |   |   |   |   |--- airline_Vistara >  0.50
+|   |   |   |   |   |   |--- value: [8675.00]
+|   |   |   |   |--- stops_one >  0.50
+|   |   |   |   |   |--- airline_Indigo <= 0.50
+|   |   |   |   |   |   |--- value: [5825.88]
+|   |   |   |   |   |--- airline_Indigo >  0.50
+|   |   |   |   |   |   |--- value: [4421.69]
+|   |   |   |--- airline_AirAsia >  0.50
+|   |   |   |   |--- source_city_Kolkata <= 0.50
+|   |   |   |   |   |--- source_city_Delhi <= 0.50
+|   |   |   |   |   |   |--- value: [2775.24]
+|   |   |   |   |   |--- source_city_Delhi >  0.50
+|   |   |   |   |   |   |--- value: [3457.65]
+|   |   |   |   |--- source_city_Kolkata >  0.50
+|   |   |   |   |   |--- days_left <= 36.50
+|   |   |   |   |   |   |--- value: [3910.79]
+|   |   |   |   |   |--- days_left >  36.50
+|   |   |   |   |   |   |--- value: [3709.13]

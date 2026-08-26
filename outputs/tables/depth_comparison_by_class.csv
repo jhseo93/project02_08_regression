@@ -1,0 +1,13 @@
+﻿분할방식,max_depth,class,n_test,MAE,RMSE,MAPE(%)
+split_group,2,Economy,38235,1992.2,2733.8,39.74
+split_group,2,Business,16729,7725.5,10318.7,15.84
+split_group,4,Economy,38235,1637.2,2407.3,29.68
+split_group,4,Business,16729,7454.9,9635.6,15.1
+split_group,6,Economy,38235,1448.4,2165.4,25.12
+split_group,6,Business,16729,7302.6,9363.8,14.62
+split_random,2,Economy,41333,2051.9,2895.6,39.22
+split_random,2,Business,18698,7886.9,10408.8,16.0
+split_random,4,Economy,41333,1668.6,2514.8,28.85
+split_random,4,Business,18698,7084.2,9378.2,14.17
+split_random,6,Economy,41333,1440.0,2248.6,23.41
+split_random,6,Business,18698,6674.1,9027.4,13.25
