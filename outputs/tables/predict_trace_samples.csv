@@ -1,0 +1,3 @@
+﻿id,flight,airline,source_city,destination_city,departure_time,arrival_time,stops,class,duration,days_left,price,예측값,차이(실제-예측),오차율(%),잎 노드
+145475,I5-2991,AirAsia,Kolkata,Hyderabad,Night,Morning,one,Economy,11.17,28,4589,3115.54,1473.46,32.11,30
+286700,UK-874,Vistara,Hyderabad,Chennai,Morning,Night,one,Business,14.58,31,41314,57562.81,-16248.81,39.33,15
